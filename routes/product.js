@@ -27,7 +27,7 @@ router.post("/create-order",(req,res)=>{
             if (data.length) {
                 productModal.create({ 
                     userId : req.body.userId,
-                    orderId :req.body.orderId,
+                    orderId :req.body.orderId,//auto
                     dateTime : date,
                     storeInfo : req.body.storeInfo,
                    

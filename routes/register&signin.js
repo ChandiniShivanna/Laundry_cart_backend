@@ -67,9 +67,9 @@ router.post("/register",async(req,res)=>{
          console.log("email")
       }
       
-      const signindata= await Users.find({[USER]:req.body.User})
+      const signindata= await Users.findOne({[USER]:req.body.User})
       console.log(signindata)
-         if(signindata.length){
+         if(signindata){
            const data= await bcrypt.compare(req.body.Password,signindata[0].Password)
              if(data){
               //generating token
