@@ -7,14 +7,14 @@ const Users=require('../Modals/register-modal.js')
 
 const salt=10
 
-router.post("/Register",async(req,res)=>{
-    //checking email is unique or not
+router.post("/register",async(req,res)=>{
+    //email verification
     const Email= await Users.find({Email:req.body.Email})
     if(Email.length){
         res.status(400).send("EmailExist")
      }
     else{
-    //checking PhoneNumber is unique or not 
+    //PhoneNumber verification 
         const Phone=await Users.find({Phone:req.body.Phone})
         if(Phone.length){
             res.status(400).send("PhoneExist")
@@ -38,6 +38,7 @@ router.post("/Register",async(req,res)=>{
                           Address:req.body.Address,
                           })
                           res.status(200).send('successfully created')
+                          
                     }
                      else {
                        res.status(400).send("hasherr")
@@ -55,7 +56,7 @@ router.post("/Register",async(req,res)=>{
 
     //Signin
 
-    router.post("/Signin",async(req,res)=>{
+    router.post("/signin",async(req,res)=>{
       let USER=""
       // console.log(isNaN(req.body.User))
       if(isNaN(req.body.User)===false){
@@ -67,7 +68,7 @@ router.post("/Register",async(req,res)=>{
       }
       
       const signindata= await Users.find({[USER]:req.body.User})
-      // console.log(signindata)
+      console.log(signindata)
          if(signindata.length){
            const data= await bcrypt.compare(req.body.Password,signindata[0].Password)
              if(data){

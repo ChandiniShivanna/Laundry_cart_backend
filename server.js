@@ -38,7 +38,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/laundrycart_mern") //mongodb+srv://A
 
 
 //path
-app.use("/userRegister",register);
+app.use("/user-register",register);
 app.use("/product",productController);
 app.use("/order", orderController);
 
