@@ -3,9 +3,10 @@ const productModal = require("../Modals/product-modal");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
 const Users = require("../Modals/register-modal")
-
+router.use(express.json());
 
 router.post("/create-order",(req,res)=>{  
+    console.log(req.body);
     const today = new Date()
     const option  = {
         day: "numeric",
