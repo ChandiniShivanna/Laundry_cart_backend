@@ -5,8 +5,9 @@ const app = express();
 require("dotenv").config();
 
 
-
-const register = require("./routes/register&signin")
+const productController = require("./routes/product");
+const orderController = require("./routes/order")
+const register = require("./routes/registerf&signin")
 //console.log(productController)
 
 
@@ -39,6 +40,8 @@ mongoose.connect(laundryDB,(data)=>{
 
 //path
 app.use("/userRegister",register);
+app.use("/product",productController);
+app.use("/order", orderController);
 
 app.get("/",(req,res)=>{
     res.status(200).send("Laundry app")
