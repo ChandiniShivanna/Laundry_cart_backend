@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const router = express.Router();
 
 router.get("/create-order", (req, res)=> {
-// console.log(req.headers);
+
     try {
         const user = jwt.verify(req.headers.authorization, process.env.SECRET_KEY );
         productModal.find({Email:user}).then((data)=>{
@@ -15,7 +15,7 @@ router.get("/create-order", (req, res)=> {
         })
 
     } catch(err) {
-        // console.log(err)
+      
         res.status(400).send("Unauthorize user")
     }    
    
