@@ -7,7 +7,7 @@ require("dotenv").config();
 
 const productController = require("./routes/product");
 const orderController = require("./routes/order")
-const register = require("./routes/registerf&signin")
+const register = require("./routes/register&signin")
 //console.log(productController)
 
 
@@ -31,12 +31,11 @@ app.listen(process.env.PORT || 3001,(err)=>{
 
 
 //database Connection
-const laundryDB= "mongodb://localhost/laundrycart_mern";//mongodb+srv://Akanksha:Apawar123@cluster0.6karf8f.mongodb.net/?retryWrites=true&w=majority
-mongoose.connect(laundryDB,(data)=>{
-    console.log("Successfully connect to db")
-},(err)=>{
-    console.log(err)
-});
+
+mongoose.connect("mongodb://127.0.0.1:27017/laundrycart_mern") //mongodb+srv://Akanksha:Apawar123@cluster0.6karf8f.mongodb.net/?retryWrites=true&w=majority
+    .then(() => console.log('database Connected!'))
+    .catch((err) => console.log('Error!!! to connect the database'+err.message))
+
 
 //path
 app.use("/userRegister",register);
