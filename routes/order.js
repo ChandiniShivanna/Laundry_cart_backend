@@ -7,8 +7,8 @@ const router = express.Router();
 router.get("/create-order", (req, res)=> {
 
     try {
-        const user = jwt.verify(req.headers.authorization, process.env.SECRET_KEY );
-        productModal.find({Email:user}).then((data)=>{
+        const user = jwt.verify((req.headers.authorization).split(" ")[1], process.env.SECRET_KEY );
+        productModal.find({}).then((data)=>{
             res.status(200).send(data)
         }).catch((err)=>{
             res.status(400).send(err);

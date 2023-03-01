@@ -32,7 +32,7 @@ app.listen(process.env.PORT || 3001,(err)=>{
 
 //database Connection
 
-mongoose.connect("mongodb+srv://Akanksha:Apawar123@cluster0.6karf8f.mongodb.net/?retryWrites=true&w=majority") //mongodb+srv://Akanksha:Apawar123@cluster0.6karf8f.mongodb.net/?retryWrites=true&w=majority
+mongoose.connect("mongodb+srv://Akanksha:Apawar123@cluster0.6karf8f.mongodb.net/test?retryWrites=true&w=majority") //mongodb+srv://Akanksha:Apawar123@cluster0.6karf8f.mongodb.net/?retryWrites=true&w=majority
     .then(() => console.log('database Connected!'))
     .catch((err) => console.log('Error!!! to connect the database'+err.message))
 
