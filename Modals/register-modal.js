@@ -1,5 +1,6 @@
 const mongoose=require("mongoose")
 
+
 const Regschema=mongoose.Schema({
     Name:String,
     Phone:Number,
@@ -10,5 +11,8 @@ const Regschema=mongoose.Schema({
     Pincode:Number,
     Address:Array,
 })
-const Users=mongoose.model("Users",Regschema)
+
+const Users=mongoose.model("Users",Regschema);
+
+
 module.exports=Users
