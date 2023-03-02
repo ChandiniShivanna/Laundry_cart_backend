@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 const RegistrationRoute = require('./routes/registertionRoutes');
 const LoginRoute = require('./routes/loginRoutes')
-const orderRoutes  = require("./routes/orderRoutes");
+// const orderRoutes  = require("./routes/orderRoutes");
 const Authentication = require('./middleware/autherization')
 
 app.use(cors());
@@ -17,9 +17,9 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
 
-app.use('/user-registration/' ,RegistrationRoute)
+app.use('/user-registration' ,RegistrationRoute)
 app.use('/user-signin',LoginRoute)
-app.use("/",Authentication,orderRoutes);
+// app.use("/",Authentication,orderRoutes);
 
 
 
