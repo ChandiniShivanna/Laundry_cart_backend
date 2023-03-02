@@ -1,10 +1,15 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require('cors')
-const app = express();
-require("dotenv").config();
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+dotenv.config();
+const port = process.env.PORT || 3001
+const API = process.env.DATABASE_URL || "mongodb+srv://Akanksha:Apawar123@cluster0.6karf8f.mongodb.net/?retryWrites=true&w=majority"
 
+mongoose.set('strictQuery', false);
 
+<<<<<<< HEAD
+const app = require('./app');
+dotenv.config();
+=======
 const productController = require("./routes/product");
 const orderController = require("./routes/order")
 const register = require("./routes/register&signin")
@@ -47,4 +52,11 @@ app.get("/",(req,res)=>{
 },(err)=>{
     console.log(err)
 })
+>>>>>>> 39a871d3e155f5cc418cd34f487c61f9adca87fa
 
+async function main() {
+    await mongoose.connect(API);
+    console.log('connected to database');
+    app.listen(port, () => console.log(`Server is live at PORT => ${port}`));
+};
+main();
