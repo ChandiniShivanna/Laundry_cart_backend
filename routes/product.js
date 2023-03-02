@@ -6,7 +6,7 @@ const Users = require("../Modals/register-modal")
 router.use(express.json());
 
 router.post("/create-order",(req,res)=>{  
-    console.log(req.body);
+    // console.log(req.body);
     const today = new Date()
     const option  = {
         day: "numeric",
