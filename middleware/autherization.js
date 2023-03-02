@@ -10,6 +10,7 @@ const Authentication = (req,res,next)=>{                    //Authenticate user 
                     return res.status(400).json({
                         message: "Not a Valid Token"
                     })
+                    
                 }
                 // console.log(decoded)
                 req.user = decoded.data;

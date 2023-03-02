@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 router.use(bodyParser.json())
 
-router.post('/register',
+router.post('/register', 
     body('email').isEmail(),
     body('password').isLength({ min: 5, max: 16 })
     , async (req, res) => {
@@ -56,5 +56,5 @@ router.post('/register',
         }
     })
 
-    
+
 module.exports = router
