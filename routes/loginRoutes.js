@@ -43,12 +43,10 @@ router.post('/login'
 
             }
 
-
-
         } catch (e) {
             return res.status(400).json({
                 "Message": e.message
-            })
+            }) 
         }
     })
 
