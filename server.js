@@ -5,12 +5,9 @@ const port = process.env.PORT || 3001
 const API = process.env.DATABASE_URL || "mongodb+srv://Akanksha:Apawar123@cluster0.6karf8f.mongodb.net/test?retryWrites=true&w=majority"
 
 mongoose.set('strictQuery', false);
-
+ 
 const app = require('./app');
 dotenv.config();
-
-
-
 
 async function main() {
     await mongoose.connect(API);
