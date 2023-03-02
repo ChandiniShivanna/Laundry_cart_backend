@@ -5,6 +5,7 @@ const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const secret = "HelloUser"
 
+
 router.post('/login' 
     , async (req, res) => {
         try {
@@ -50,6 +51,8 @@ router.post('/login'
         }
     })
 
+
+    
 router.put('/forgotpassword', async (req,res)=>{
     try{
         const {username , password} = req.body;

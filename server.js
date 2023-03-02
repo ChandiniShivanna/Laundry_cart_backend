@@ -9,9 +9,6 @@ mongoose.set('strictQuery', false);
 const app = require('./app');
 dotenv.config();
 
-
-
-
 async function main() {
     await mongoose.connect(API);
     console.log('connected to database');
