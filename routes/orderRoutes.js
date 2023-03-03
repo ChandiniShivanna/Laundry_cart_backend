@@ -24,8 +24,7 @@ router.post("/createorder",async(req,res)=>{
 
 router.get("/product",async(req,res)=>{
     
-    try{
-        
+    try{        
         const data = await ProductModel.find().sort({_id:-1});
         res.json(data);
     }
@@ -59,6 +58,7 @@ router.put("/updateorder/:id", async (req, res) => {
         res.status(401).send(e.message)
     }
 });
+
 
 
 module.exports = router

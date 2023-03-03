@@ -18,7 +18,7 @@ app.use(bodyparser.urlencoded({ extended: false }));
 
 app.use('/user-registration' ,RegistrationRoute)
 app.use('/user-signin',LoginRoute)
-app.use("/user-order",Authentication,orderRoutes);
+app.use('/user-order',Authentication,orderRoutes);
 
 
 
